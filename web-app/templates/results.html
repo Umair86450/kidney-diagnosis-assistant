@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnosis Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&family=Open+Sans:wght@400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #FF6F61, #6F86D6);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden; /* Prevent scrolling on body */
+        }
+        .header {
+            text-align: center;
+            color: #2C3E50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            font-family: 'Roboto', sans-serif;
+        }
+        .report-card {
+            background: #ffffff;
+            border: 2px solid #00796B;
+            border-radius: 20px;
+            padding: 2.5rem; /* Increased padding for more space */
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            width: 90%; /* Responsive width */
+            max-width: 1000px; /* Larger max width */
+            height: auto;
+            overflow-y: auto; /* Allow scrolling within the card */
+            max-height: 80vh; /* Limit the height of the card */
+            transition: width 0.3s ease; /* Smooth transition */
+        }
+        .section-title {
+            color: #2C3E50;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            border-bottom: 2px solid #00796B;
+            padding-bottom: 0.5rem;
+            font-size: 1.8rem; /* Slightly larger title font */
+        }
+        .predicted-type {
+            font-family: 'Open Sans', sans-serif;
+            font-size: 1.5rem;
+            color: #00796B;
+            text-align: center;
+            margin: 0.5rem 0;
+            font-weight: bold;
+        }
+        .section-content {
+            font-family: 'Open Sans', sans-serif;
+            color: #555;
+            margin: 0.5rem 0;
+            line-height: 1.6; /* Improved line height for readability */
+        }
+        .disclaimer {
+            margin-top: 20px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px;
+            border-radius: 10px;
+            color: #333;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        .back-button {
+            background-color: #00796B;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            margin-top: 1rem;
+            display: inline-block;
+        }
+        .back-button:hover {
+            background-color: #004D40;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">Diagnosis Results</h1>
+
+    <div class="report-card">
+        <!-- <h2 class="section-title">Predicted Kidney Type:</h2>
+        <p class="predicted-type">{{ kidney_type }}</p> -->
+         
+        <h2 class="section-title">Detailed Analysis Report:</h2>
+        <div class="section-content">{{ report|safe }}</div>
+    </div>
+
+    <div class="disclaimer">
+        <p>Note: This is an AI-assisted analysis. Please consult with a healthcare professional for accurate medical diagnosis and treatment.</p>
+    </div>
+
+    <div>
+        <a href="/" class="back-button">Go back</a>
+    </div>
+</body>
+</html>

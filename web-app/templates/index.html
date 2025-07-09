@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kidney Diagnosis - CT Scan Upload</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            overflow: hidden; /* Prevent normal scrolling */
+            margin: 0; /* Remove default margin */
+            height: 100vh; /* Full viewport height */
+            background: linear-gradient(135deg, #FF6F61, #6F86D6); /* Attractive gradient colors */
+        }
+
+        .content {
+            background-color: white; /* White background for content */
+            max-width: 600px; /* Set max width for content */
+            margin: 20px auto; /* Center content */
+            padding: 20px; /* Add padding */
+            border-radius: 8px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+            height: calc(100vh - 40px); /* Full height minus margins */
+            overflow-y: auto; /* Allow vertical scrolling within the content */
+        }
+    </style>
+</head>
+<body class="font-sans leading-normal tracking-normal">
+    <div class="content" id="scrollable-content">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">Kidney CT Scan Upload</h1>
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <div class="mb-6">
+                <label for="file" class="block text-md font-medium text-gray-700">Choose a CT scan image:</label>
+                <input type="file" name="file" required class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+            </div>
+
+            <div class="mb-6">
+                <label for="pain" class="block text-md font-medium text-gray-700">Do you experience pain?</label>
+                <select name="pain" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="history" class="block text-md font-medium text-gray-700">Is there any known kidney history?</label>
+                <select name="history" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="pain_level" class="block text-md font-medium text-gray-700">What is your pain level?</label>
+                <select name="pain_level" id="pain_level" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="No Pain">No Pain</option>
+                    <option value="Mild">Mild</option>
+                    <option value="Moderate">Moderate</option>
+                    <option value="Severe">Severe</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="pain_duration" class="block text-md font-medium text-gray-700">Duration of pain:</label>
+                <select name="pain_duration" id="pain_duration" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="No Pain">No Pain</option>
+                    <option value="Less than a week">Less than a week</option>
+                    <option value="1-4 weeks">1-4 weeks</option>
+                    <option value="More than a month">More than a month</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="symptoms" class="block text-md font-medium text-gray-700">Other symptoms:</label>
+                <select name="symptoms" id="symptoms" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="Blood in urine">Blood in urine</option>
+                    <option value="Frequent urination">Frequent urination</option>
+                    <option value="Fever">Fever</option>
+                    <option value="None">None</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label for="family_history" class="block text-md font-medium text-gray-700">Family history of kidney problems?</label>
+                <select name="family_history" id="family_history" class="mt-1 block w-full p-3 rounded-md border-2 border-gray-300 focus:border-blue-600 focus:ring focus:ring-blue-200">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                    <option value="Unknown">Unknown</option>
+                </select>
+            </div>
+
+            <div class="text-center mt-6">
+                <button type="submit" class="w-full text-white font-bold py-3 rounded-md bg-blue-600 hover:bg-blue-500 transition duration-300">Submit</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
